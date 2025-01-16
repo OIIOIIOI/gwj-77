@@ -1,18 +1,23 @@
-[gd_resource type="Resource" script_class="ModuleData" load_steps=5 format=3 uid="uid://btc4lhiiys3lb"]
+[gd_resource type="Resource" script_class="ModuleData" load_steps=7 format=3 uid="uid://btc4lhiiys3lb"]
 
 [ext_resource type="Script" path="res://resources/modules/module.gd" id="1_cuh3u"]
 [ext_resource type="PackedScene" uid="uid://d3b22anxa1e71" path="res://scenes/modules/landing_pod/landing_pod.tscn" id="1_naosf"]
+[ext_resource type="Script" path="res://resources/recipes/module_production.gd" id="1_spi5j"]
+[ext_resource type="Resource" uid="uid://cew5clwesp2px" path="res://resources/basic_resources/basic_resource_a.tres" id="2_nqqx5"]
 [ext_resource type="Script" path="res://resources/recipes/recipe.gd" id="2_s0w5q"]
-[ext_resource type="Resource" uid="uid://hqi5w2g58d8a" path="res://resources/recipes/landing_pod_ra_production.tres" id="3_g1cgj"]
+
+[sub_resource type="Resource" id="Resource_mx1ac"]
+script = ExtResource("1_spi5j")
+resource = ExtResource("2_nqqx5")
+level_offset = 0
+id = ""
 
 [resource]
 script = ExtResource("1_cuh3u")
 name = "Landing Pod"
 scene = ExtResource("1_naosf")
 available_from_start = true
-recipes = Array[ExtResource("2_s0w5q")]([ExtResource("3_g1cgj")])
-production_speed_level = 0
-upgradable_speed = false
-upgradable_efficiency = false
-upgradable_automation = false
+upgradable = false
+default_production = Array[ExtResource("1_spi5j")]([SubResource("Resource_mx1ac")])
+recipes = Array[ExtResource("2_s0w5q")]([])
 id = "landing_pod"

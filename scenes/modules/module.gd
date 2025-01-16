@@ -2,40 +2,58 @@ class_name Module
 extends Node2D
 
 
-const PRODUCTION_TIMES = [8, 5, 3, 2, 1]
+const SCENE_MODULE_CORE = preload("res://scenes/modules/module_core.tscn")
 
 
 var module_data: ModuleData
+var core: ModuleCore
+
+var default_production: Array[ModuleProductionData]
 var recipes: Array[RecipeData]
-var production_speed_level := 0
-var job_list: Node
+var upgrade_level := 0
+
+
+@onready var core_marker: Marker2D = %CoreMarker
 
 
 func _ready() -> void:
-	recipes = module_data.recipes.duplicate(true)
-	production_speed_level = module_data.production_speed_level
+	# Add core scene
+	core = SCENE_MODULE_CORE.instantiate() as ModuleCore
+	add_child(core)
 
-	job_list = Node.new()
-	job_list.name = "Jobs"
-	add_child(job_list)
+	# Position core if marker was found
+	if core_marker:
+		core.position = core_marker.position
 
-	for recipe in recipes:
-		if recipe.run_mode == RecipeData.RUN_MODE_AUTO_CONTINUOUS:
-			run_job(Job.new(recipe, false))
-		elif recipe.run_mode == RecipeData.RUN_MODE_AUTO_ONE_SHOT:
-			run_job(Job.new(recipe, true))
+	# If module has a default production, start it
+	default_production = module_data.default_production.duplicate(true)
+	if default_production.size() > 0:
+		core.timer.timeout.connect(on_production_timer_timeout)
+		core.timer.start()
 
 	GameEvents.recipe_locked.connect(on_recipe_locked)
 
 
-func get_production_time():
-	return PRODUCTION_TIMES[production_speed_level]
+func on_production_timer_timeout() -> void:
+	var results: Array[ResourceQuantity] = []
+
+	for prod in default_production:
+		var rq = ResourceQuantity.new()
+		rq.resource = prod.resource
+		rq.quantity = get_production_quantity(prod.level_offset)
+		results.append(rq)
+
+	Inventory.batch_update_resources(results)
+
+
+func get_production_quantity(offset: int = 0) -> int:
+	return pow(upgrade_level + 1 + offset, 3)
 
 
 func run_job(job: Job) -> void:
 	# Add node to scene tree if not already there
 	if !job.is_inside_tree():
-		job_list.add_child(job)
+		core.jobs.add_child(job)
 
 	# Set source and start job
 	job.source = self
@@ -43,7 +61,7 @@ func run_job(job: Job) -> void:
 
 
 func on_recipe_locked(recipe: RecipeData, source: Module) -> void:
-	for job in job_list.get_children():
+	for job in core.jobs.get_children():
 		if job is Job:
 			if job.recipe == recipe:
 				print("Module ", name, " contains a recipe that is now locked: ", recipe.name)

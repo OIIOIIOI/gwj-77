@@ -1,19 +1,30 @@
-[gd_resource type="Resource" script_class="ModuleData" load_steps=6 format=3 uid="uid://bp7lrx4hapnoq"]
+[gd_resource type="Resource" script_class="ModuleData" load_steps=9 format=3 uid="uid://bp7lrx4hapnoq"]
 
 [ext_resource type="PackedScene" uid="uid://bboijc7wck4or" path="res://scenes/modules/collector_bot/collector_bot.tscn" id="1_tpcy4"]
+[ext_resource type="Script" path="res://resources/recipes/module_production.gd" id="1_vbftf"]
+[ext_resource type="Resource" uid="uid://cew5clwesp2px" path="res://resources/basic_resources/basic_resource_a.tres" id="2_2n3yo"]
 [ext_resource type="Script" path="res://resources/modules/module.gd" id="2_dwl5q"]
-[ext_resource type="Resource" uid="uid://binjr1nojd8bf" path="res://resources/recipes/collector_bot_ra_production.tres" id="2_si3ch"]
-[ext_resource type="Resource" uid="uid://1gjkgbhndhc4" path="res://resources/recipes/collector_bot_rb_production.tres" id="3_7ii6s"]
 [ext_resource type="Script" path="res://resources/recipes/recipe.gd" id="3_gga8j"]
+[ext_resource type="Resource" uid="uid://dtl2g2ke4ocg5" path="res://resources/basic_resources/basic_resource_b.tres" id="3_sus0f"]
+
+[sub_resource type="Resource" id="Resource_5geg0"]
+script = ExtResource("1_vbftf")
+resource = ExtResource("2_2n3yo")
+level_offset = 1
+id = ""
+
+[sub_resource type="Resource" id="Resource_btis2"]
+script = ExtResource("1_vbftf")
+resource = ExtResource("3_sus0f")
+level_offset = 0
+id = ""
 
 [resource]
 script = ExtResource("2_dwl5q")
 name = "Collector Bot"
 scene = ExtResource("1_tpcy4")
 available_from_start = false
-recipes = Array[ExtResource("3_gga8j")]([ExtResource("2_si3ch"), ExtResource("3_7ii6s")])
-production_speed_level = 1
-upgradable_speed = false
-upgradable_efficiency = false
-upgradable_automation = false
+upgradable = true
+default_production = Array[ExtResource("1_vbftf")]([SubResource("Resource_5geg0"), SubResource("Resource_btis2")])
+recipes = Array[ExtResource("3_gga8j")]([])
 id = "collector_bot"

@@ -1,8 +1,6 @@
 extends Node
 
 
-var available_game_resources: ResourceCollectionData = preload("res://resources/collections/available_resources.tres")
-
 var basic_resources: Dictionary = {}
 var organisms: Dictionary = {}
 var modules: Dictionary = {}

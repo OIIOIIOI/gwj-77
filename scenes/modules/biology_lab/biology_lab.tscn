@@ -10,3 +10,7 @@ script = ExtResource("1_t7qlj")
 position = Vector2(45, -442)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_0xyi0")
+
+[node name="CoreMarker" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -585)

@@ -1,18 +1,23 @@
-[gd_resource type="Resource" script_class="ModuleData" load_steps=5 format=3 uid="uid://djf1v6fndlakp"]
+[gd_resource type="Resource" script_class="ModuleData" load_steps=7 format=3 uid="uid://djf1v6fndlakp"]
 
 [ext_resource type="PackedScene" uid="uid://74aq2sv6jsos" path="res://scenes/modules/mining_drill/mining_drill.tscn" id="1_c1agb"]
 [ext_resource type="Script" path="res://resources/recipes/recipe.gd" id="1_c6w5s"]
-[ext_resource type="Resource" uid="uid://bwrjnkwv1yyxg" path="res://resources/recipes/mining_drill_rc_production.tres" id="2_mit2g"]
+[ext_resource type="Script" path="res://resources/recipes/module_production.gd" id="1_vvi34"]
+[ext_resource type="Resource" uid="uid://j57hg3v8mh1l" path="res://resources/basic_resources/basic_resource_c.tres" id="2_1748o"]
 [ext_resource type="Script" path="res://resources/modules/module.gd" id="2_sajjt"]
+
+[sub_resource type="Resource" id="Resource_2icwu"]
+script = ExtResource("1_vvi34")
+resource = ExtResource("2_1748o")
+level_offset = 1
+id = ""
 
 [resource]
 script = ExtResource("2_sajjt")
 name = "Mining Drill"
 scene = ExtResource("1_c1agb")
 available_from_start = false
-recipes = Array[ExtResource("1_c6w5s")]([ExtResource("2_mit2g")])
-production_speed_level = 1
-upgradable_speed = false
-upgradable_efficiency = false
-upgradable_automation = false
+upgradable = true
+default_production = Array[ExtResource("1_vvi34")]([SubResource("Resource_2icwu")])
+recipes = Array[ExtResource("1_c6w5s")]([])
 id = "mining_drill"
