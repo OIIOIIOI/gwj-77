@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BasicResourceData" load_steps=3 format=3 uid="uid://3a5l1e8r0xtu"]
+
+[ext_resource type="Script" path="res://resources/basic_resources/basic_resource.gd" id="1_c1bxb"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4f84r"]
+size = Vector2(64, 64)
+
+[resource]
+script = ExtResource("1_c1bxb")
+type = 4
+icon = SubResource("PlaceholderTexture2D_4f84r")
+id = "basic_resource_health"

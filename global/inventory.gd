@@ -1,6 +1,8 @@
 extends Node
 
 
+const MAX_HEALTH := 600
+
 var basic_resources: Dictionary = {}
 var organisms: Dictionary = {}
 var modules: Dictionary = {}

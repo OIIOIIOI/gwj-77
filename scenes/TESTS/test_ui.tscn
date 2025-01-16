@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://chyubqsufarwa"]
+[gd_scene load_steps=5 format=3 uid="uid://chyubqsufarwa"]
 
 [ext_resource type="Script" path="res://scenes/TESTS/test_ui.gd" id="1_f7umh"]
 [ext_resource type="Theme" uid="uid://jil4di7vynr5" path="res://assets/theme.tres" id="2_n2vl6"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dw2kp"]
+size = Vector2(400, 24)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_y2mjw"]
+size = Vector2(400, 24)
 
 [node name="ResourcesUI" type="CanvasLayer"]
 script = ExtResource("1_f7umh")
@@ -36,6 +42,30 @@ theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 fit_content = true
 scroll_active = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 32
+text = "HP:"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 0.5
+texture_under = SubResource("PlaceholderTexture2D_dw2kp")
+texture_progress = SubResource("PlaceholderTexture2D_y2mjw")
+tint_under = Color(0, 0, 0, 0.12549)
+tint_progress = Color(0, 0, 0, 1)
 
 [node name="RecipeList" type="VBoxContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2(400, 0)

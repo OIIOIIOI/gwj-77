@@ -1,7 +1,9 @@
 extends CanvasLayer
 
 
-const RECIPE_PANEL = preload("res://scenes/TESTS/recipe_panel.tscn")
+const SCENE_RECIPE_PANEL = preload("res://scenes/TESTS/recipe_panel.tscn")
+const BASIC_RESOURCE_HEALTH = preload("res://resources/basic_resources/basic_resource_health.tres")
+
 
 const ICON_TAG := "[img={icon_size}x{icon_size}]{icon_path}[/img]"
 const ICON_SIZE := 80
@@ -11,6 +13,7 @@ const ICON_SIZE := 80
 @onready var recipe_list: VBoxContainer = $MarginContainer/RecipeList
 @onready var label: Label = $MarginContainer/VBoxContainer2/Label
 @onready var h_slider: HSlider = $MarginContainer/VBoxContainer2/HSlider
+@onready var health_bar: TextureProgressBar = $MarginContainer/HBoxContainer/TextureProgressBar
 
 
 func _ready() -> void:
@@ -32,15 +35,18 @@ func update_resources_ui() -> void:
 	rich_text_label.text = ""
 
 	for resource in Inventory.basic_resources.keys():
-		if resource.icon:
-			rich_text_label.text += ICON_TAG.format({
-				"icon_size": ICON_SIZE,
-				"icon_path": resource.icon.resource_path
-			})
+		if resource == BASIC_RESOURCE_HEALTH:
+			health_bar.value = float(Inventory.basic_resources[resource]) / float(Inventory.MAX_HEALTH)
 		else:
-			rich_text_label.text += resource.id
-		rich_text_label.text += " x" + str(Inventory.basic_resources[resource])
-		rich_text_label.text += "\n"
+			if resource.icon:
+				rich_text_label.text += ICON_TAG.format({
+					"icon_size": ICON_SIZE,
+					"icon_path": resource.icon.resource_path
+				})
+			else:
+				rich_text_label.text += resource.id
+			rich_text_label.text += " x" + str(Inventory.basic_resources[resource])
+			rich_text_label.text += "\n"
 
 	for resource in Inventory.organisms.keys():
 		rich_text_label.text += ICON_TAG.format({
@@ -56,7 +62,7 @@ func on_recipe_unlocked(recipe: RecipeData, source: Module) -> void:
 	if recipe.run_mode != RecipeData.RUN_MODE_MANUAL:
 		return
 
-	var panel = RECIPE_PANEL.instantiate() as RecipePanel
+	var panel = SCENE_RECIPE_PANEL.instantiate() as RecipePanel
 	recipe_list.add_child(panel)
 	panel.set_recipe(recipe, source)
 

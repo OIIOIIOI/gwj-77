@@ -40,3 +40,6 @@ position = Vector2(959, 648)
 texture = SubResource("PlaceholderTexture2D_6h5n2")
 
 [node name="ResourcesUI" parent="." instance=ExtResource("2_63hjy")]
+
+[node name="GettingOldTimer" type="Timer" parent="."]
+autostart = true

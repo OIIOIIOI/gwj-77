@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_c86ty")
-type = 0
+type = 2
 icon = ExtResource("1_yb1e8")
 id = "basic_resource_c"
