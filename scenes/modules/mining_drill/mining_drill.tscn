@@ -1,7 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://74aq2sv6jsos"]
+[gd_scene load_steps=11 format=3 uid="uid://74aq2sv6jsos"]
 
 [ext_resource type="Script" path="res://scenes/modules/mining_drill/mining_drill.gd" id="1_4lq72"]
 [ext_resource type="Texture2D" uid="uid://rtfbsdk00m1g" path="res://assets/modules/mining_drill.png" id="2_ydw3b"]
+[ext_resource type="Shader" uid="uid://bufm20etn6vqb" path="res://scenes/TESTS/test_shader.tres" id="3_wbnra"]
+[ext_resource type="Texture2D" uid="uid://c3l21gl5lr00c" path="res://assets/modules/mining_drill_mask.png" id="4_ki0mu"]
+[ext_resource type="Texture2D" uid="uid://cy8xb6j4e53ag" path="res://assets/modules/mining_drill_screw.png" id="5_an41s"]
+[ext_resource type="Texture2D" uid="uid://ci8pxnnwmg7mc" path="res://assets/particle.png" id="6_mwlxs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kbego"]
+shader = ExtResource("3_wbnra")
+shader_parameter/mask_texture = ExtResource("4_ki0mu")
+
+[sub_resource type="Curve" id="Curve_tnube"]
+_data = [Vector2(0, 0.7548), 0.0, 0.0, 0, 0, Vector2(1, 0.299427), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_x4r1p"]
+curve = SubResource("Curve_tnube")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qpjmo"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(32, 1, 1)
+angle_min = 1.07288e-05
+angle_max = 360.0
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 80.0
+initial_velocity_max = 120.0
+gravity = Vector3(0, 150, 0)
+scale_curve = SubResource("CurveTexture_x4r1p")
 
 [node name="MiningDrill" type="Node2D"]
 script = ExtResource("1_4lq72")
@@ -11,6 +38,20 @@ position = Vector2(246, -135)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ydw3b")
 
+[node name="Screw" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_kbego")
+position = Vector2(246, -135)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_an41s")
+region_rect = Rect2(0, 0, 335, 480)
+
 [node name="CoreMarker" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(246, 32)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(246, 0)
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_qpjmo")
+texture = ExtResource("6_mwlxs")
