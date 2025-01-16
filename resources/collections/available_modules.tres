@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ResourceCollectionData" load_steps=7 format=3 uid="uid://dfamth5witpxv"]
+
+[ext_resource type="Resource" uid="uid://btc4lhiiys3lb" path="res://resources/modules/landing_pod.tres" id="1_t60rh"]
+[ext_resource type="Script" path="res://resources/collections/resource_collection.gd" id="1_w5nmv"]
+[ext_resource type="Resource" uid="uid://bp7lrx4hapnoq" path="res://resources/modules/collector_bot.tres" id="2_ueuuu"]
+[ext_resource type="Resource" uid="uid://djf1v6fndlakp" path="res://resources/modules/mining_drill.tres" id="3_4s2ja"]
+[ext_resource type="Resource" uid="uid://c3hxtdxs1xay2" path="res://resources/modules/spiral_condenser.tres" id="4_twpri"]
+[ext_resource type="Resource" uid="uid://dbs87mje7jyeo" path="res://resources/modules/biology_lab.tres" id="5_v4vwb"]
+
+[resource]
+script = ExtResource("1_w5nmv")
+collection = Array[Resource]([ExtResource("1_t60rh"), ExtResource("2_ueuuu"), ExtResource("4_twpri"), ExtResource("3_4s2ja"), ExtResource("5_v4vwb")])

@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="RecipeData" load_steps=11 format=3 uid="uid://dm5xe0jjnv0fy"]
+
+[ext_resource type="Script" path="res://global/resource_quantity.gd" id="1_cen0y"]
+[ext_resource type="Resource" uid="uid://cew5clwesp2px" path="res://resources/basic_resources/basic_resource_a.tres" id="2_l1ccg"]
+[ext_resource type="Resource" uid="uid://dtl2g2ke4ocg5" path="res://resources/basic_resources/basic_resource_b.tres" id="3_72nv8"]
+[ext_resource type="Resource" uid="uid://j57hg3v8mh1l" path="res://resources/basic_resources/basic_resource_c.tres" id="4_7c4ff"]
+[ext_resource type="Resource" uid="uid://djf1v6fndlakp" path="res://resources/modules/mining_drill.tres" id="5_jonof"]
+[ext_resource type="Script" path="res://resources/recipes/recipe.gd" id="5_recaa"]
+
+[sub_resource type="Resource" id="Resource_5no40"]
+script = ExtResource("1_cen0y")
+resource = ExtResource("2_l1ccg")
+quantity = -420
+
+[sub_resource type="Resource" id="Resource_w24kx"]
+script = ExtResource("1_cen0y")
+resource = ExtResource("3_72nv8")
+quantity = -360
+
+[sub_resource type="Resource" id="Resource_tp25x"]
+script = ExtResource("1_cen0y")
+resource = ExtResource("4_7c4ff")
+quantity = -80
+
+[sub_resource type="Resource" id="Resource_rjyhu"]
+script = ExtResource("1_cen0y")
+resource = ExtResource("5_jonof")
+quantity = 1
+
+[resource]
+script = ExtResource("5_recaa")
+name = "Mining Drill"
+ingredients = Array[ExtResource("1_cen0y")]([SubResource("Resource_5no40"), SubResource("Resource_w24kx"), SubResource("Resource_tp25x")])
+results = Array[ExtResource("1_cen0y")]([SubResource("Resource_rjyhu")])
+run_mode = "run_mode_manual"
+id = "build_mining_drill"

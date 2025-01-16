@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="RecipeData" load_steps=11 format=3 uid="uid://c3j3s6g3u0plh"]
+
+[ext_resource type="Script" path="res://global/resource_quantity.gd" id="1_opmb4"]
+[ext_resource type="Resource" uid="uid://cew5clwesp2px" path="res://resources/basic_resources/basic_resource_a.tres" id="2_5kpny"]
+[ext_resource type="Resource" uid="uid://dtl2g2ke4ocg5" path="res://resources/basic_resources/basic_resource_b.tres" id="3_pbh7h"]
+[ext_resource type="Resource" uid="uid://j57hg3v8mh1l" path="res://resources/basic_resources/basic_resource_c.tres" id="4_psyed"]
+[ext_resource type="Resource" uid="uid://dbs87mje7jyeo" path="res://resources/modules/biology_lab.tres" id="5_qcu4c"]
+[ext_resource type="Script" path="res://resources/recipes/recipe.gd" id="6_fgra6"]
+
+[sub_resource type="Resource" id="Resource_qs3av"]
+script = ExtResource("1_opmb4")
+resource = ExtResource("2_5kpny")
+quantity = -500
+
+[sub_resource type="Resource" id="Resource_e717i"]
+script = ExtResource("1_opmb4")
+resource = ExtResource("3_pbh7h")
+quantity = -500
+
+[sub_resource type="Resource" id="Resource_boy7g"]
+script = ExtResource("1_opmb4")
+resource = ExtResource("4_psyed")
+quantity = -500
+
+[sub_resource type="Resource" id="Resource_i3v7v"]
+script = ExtResource("1_opmb4")
+resource = ExtResource("5_qcu4c")
+quantity = 1
+
+[resource]
+script = ExtResource("6_fgra6")
+name = "Biology Lab"
+ingredients = Array[ExtResource("1_opmb4")]([SubResource("Resource_qs3av"), SubResource("Resource_e717i"), SubResource("Resource_boy7g")])
+results = Array[ExtResource("1_opmb4")]([SubResource("Resource_i3v7v")])
+run_mode = "run_mode_manual"
+id = "build_biology_lab"

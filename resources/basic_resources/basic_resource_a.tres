@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BasicResourceData" load_steps=3 format=3 uid="uid://cew5clwesp2px"]
+
+[ext_resource type="Texture2D" uid="uid://dxgs7ia5h1mbi" path="res://assets/icons/RA.png" id="1_ogvax"]
+[ext_resource type="Script" path="res://resources/basic_resources/basic_resource.gd" id="1_yovhx"]
+
+[resource]
+script = ExtResource("1_yovhx")
+type = 0
+icon = ExtResource("1_ogvax")
+id = "basic_resource_a"

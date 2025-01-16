@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="RecipeData" load_steps=5 format=3 uid="uid://bwrjnkwv1yyxg"]
+
+[ext_resource type="Script" path="res://global/resource_quantity.gd" id="1_whuct"]
+[ext_resource type="Resource" uid="uid://j57hg3v8mh1l" path="res://resources/basic_resources/basic_resource_c.tres" id="2_vdw26"]
+[ext_resource type="Script" path="res://resources/recipes/recipe.gd" id="3_3i443"]
+
+[sub_resource type="Resource" id="Resource_iholh"]
+script = ExtResource("1_whuct")
+resource = ExtResource("2_vdw26")
+quantity = 27
+
+[resource]
+script = ExtResource("3_3i443")
+name = "rC Production"
+ingredients = Array[ExtResource("1_whuct")]([])
+results = Array[ExtResource("1_whuct")]([SubResource("Resource_iholh")])
+run_mode = "run_mode_auto_continuous"
+id = "mining_drill_rc_production"

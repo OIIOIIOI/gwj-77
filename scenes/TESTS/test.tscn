@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://btvm7efa3cotw"]
+
+[ext_resource type="PackedScene" uid="uid://chyubqsufarwa" path="res://scenes/TESTS/test_ui.tscn" id="1_gyh7y"]
+[ext_resource type="PackedScene" uid="uid://bng5g5d1iqejr" path="res://scenes/TESTS/landing_pod.tscn" id="2_efxec"]
+
+[node name="Test" type="Node2D"]
+
+[node name="ResourcesUI" parent="." instance=ExtResource("1_gyh7y")]
+
+[node name="LandingPod" parent="." instance=ExtResource("2_efxec")]
+position = Vector2(501, 308)

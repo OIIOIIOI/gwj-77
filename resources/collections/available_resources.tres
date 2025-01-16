@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ResourceCollectionData" load_steps=8 format=3 uid="uid://b0n02d8cjrroh"]
+
+[ext_resource type="Resource" uid="uid://cew5clwesp2px" path="res://resources/basic_resources/basic_resource_a.tres" id="1_blhud"]
+[ext_resource type="Script" path="res://resources/collections/resource_collection.gd" id="1_iqw3t"]
+[ext_resource type="Resource" uid="uid://dtl2g2ke4ocg5" path="res://resources/basic_resources/basic_resource_b.tres" id="2_dhu3q"]
+[ext_resource type="Resource" uid="uid://j57hg3v8mh1l" path="res://resources/basic_resources/basic_resource_c.tres" id="3_vbpaj"]
+[ext_resource type="Resource" uid="uid://dpnnfjj4aqeno" path="res://resources/organisms/organism_a.tres" id="4_ebk7i"]
+[ext_resource type="Resource" uid="uid://c7f3t3n8vmqim" path="res://resources/organisms/organism_b.tres" id="5_cslql"]
+[ext_resource type="Resource" uid="uid://b4ic6s2q43k6l" path="res://resources/organisms/organism_c.tres" id="6_usrbm"]
+
+[resource]
+script = ExtResource("1_iqw3t")
+collection = Array[Resource]([ExtResource("1_blhud"), ExtResource("2_dhu3q"), ExtResource("3_vbpaj"), ExtResource("4_ebk7i"), ExtResource("5_cslql"), ExtResource("6_usrbm")])

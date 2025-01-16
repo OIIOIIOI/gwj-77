@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3b22anxa1e71"]
+
+[ext_resource type="Script" path="res://scenes/modules/landing_pod/landing_pod.gd" id="1_t5fyt"]
+[ext_resource type="Texture2D" uid="uid://dxso8hjc62jdv" path="res://assets/modules/landing_pod.png" id="2_lyguk"]
+
+[node name="LandingPod" type="Node2D"]
+z_index = 1
+script = ExtResource("1_t5fyt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -169)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_lyguk")

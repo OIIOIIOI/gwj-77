@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ModuleData" load_steps=5 format=3 uid="uid://btc4lhiiys3lb"]
+
+[ext_resource type="Script" path="res://resources/modules/module.gd" id="1_cuh3u"]
+[ext_resource type="PackedScene" uid="uid://d3b22anxa1e71" path="res://scenes/modules/landing_pod/landing_pod.tscn" id="1_naosf"]
+[ext_resource type="Script" path="res://resources/recipes/recipe.gd" id="2_s0w5q"]
+[ext_resource type="Resource" uid="uid://hqi5w2g58d8a" path="res://resources/recipes/landing_pod_ra_production.tres" id="3_g1cgj"]
+
+[resource]
+script = ExtResource("1_cuh3u")
+name = "Landing Pod"
+scene = ExtResource("1_naosf")
+available_from_start = true
+recipes = Array[ExtResource("2_s0w5q")]([ExtResource("3_g1cgj")])
+production_speed_level = 0
+upgradable_speed = false
+upgradable_efficiency = false
+upgradable_automation = false
+id = "landing_pod"

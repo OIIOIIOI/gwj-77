@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ModuleData" load_steps=5 format=3 uid="uid://djf1v6fndlakp"]
+
+[ext_resource type="PackedScene" uid="uid://74aq2sv6jsos" path="res://scenes/modules/mining_drill/mining_drill.tscn" id="1_c1agb"]
+[ext_resource type="Script" path="res://resources/recipes/recipe.gd" id="1_c6w5s"]
+[ext_resource type="Resource" uid="uid://bwrjnkwv1yyxg" path="res://resources/recipes/mining_drill_rc_production.tres" id="2_mit2g"]
+[ext_resource type="Script" path="res://resources/modules/module.gd" id="2_sajjt"]
+
+[resource]
+script = ExtResource("2_sajjt")
+name = "Mining Drill"
+scene = ExtResource("1_c1agb")
+available_from_start = false
+recipes = Array[ExtResource("1_c6w5s")]([ExtResource("2_mit2g")])
+production_speed_level = 1
+upgradable_speed = false
+upgradable_efficiency = false
+upgradable_automation = false
+id = "mining_drill"

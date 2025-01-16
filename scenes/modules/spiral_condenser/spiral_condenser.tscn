@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqvwiaijwhv7u"]
+
+[ext_resource type="Script" path="res://scenes/modules/spiral_condenser/spiral_condenser.gd" id="1_5mrk5"]
+[ext_resource type="Texture2D" uid="uid://d4jbufmxn0pk6" path="res://assets/modules/spiral_condenser.png" id="2_dqw7i"]
+
+[node name="SpiralCondenser" type="Node2D"]
+script = ExtResource("1_5mrk5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-251, -144)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_dqw7i")

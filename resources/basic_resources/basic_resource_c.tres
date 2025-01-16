@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BasicResourceData" load_steps=3 format=3 uid="uid://j57hg3v8mh1l"]
+
+[ext_resource type="Script" path="res://resources/basic_resources/basic_resource.gd" id="1_c86ty"]
+[ext_resource type="Texture2D" uid="uid://c533c6kp0r4i4" path="res://assets/icons/RC.png" id="1_yb1e8"]
+
+[resource]
+script = ExtResource("1_c86ty")
+type = 0
+icon = ExtResource("1_yb1e8")
+id = "basic_resource_c"

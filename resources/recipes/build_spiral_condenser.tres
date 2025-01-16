@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="RecipeData" load_steps=9 format=3 uid="uid://dbc673fuv4ovg"]
+
+[ext_resource type="Script" path="res://global/resource_quantity.gd" id="1_sg43m"]
+[ext_resource type="Resource" uid="uid://cew5clwesp2px" path="res://resources/basic_resources/basic_resource_a.tres" id="2_lkriq"]
+[ext_resource type="Resource" uid="uid://dtl2g2ke4ocg5" path="res://resources/basic_resources/basic_resource_b.tres" id="3_01yhg"]
+[ext_resource type="Script" path="res://resources/recipes/recipe.gd" id="4_24jq0"]
+[ext_resource type="Resource" uid="uid://c3hxtdxs1xay2" path="res://resources/modules/spiral_condenser.tres" id="4_65tcc"]
+
+[sub_resource type="Resource" id="Resource_3iee5"]
+script = ExtResource("1_sg43m")
+resource = ExtResource("2_lkriq")
+quantity = -180
+
+[sub_resource type="Resource" id="Resource_cnlhf"]
+script = ExtResource("1_sg43m")
+resource = ExtResource("3_01yhg")
+quantity = -50
+
+[sub_resource type="Resource" id="Resource_ggy55"]
+script = ExtResource("1_sg43m")
+resource = ExtResource("4_65tcc")
+quantity = 1
+
+[resource]
+script = ExtResource("4_24jq0")
+name = "Spiral Condenser"
+ingredients = Array[ExtResource("1_sg43m")]([SubResource("Resource_3iee5"), SubResource("Resource_cnlhf")])
+results = Array[ExtResource("1_sg43m")]([SubResource("Resource_ggy55")])
+run_mode = "run_mode_manual"
+id = "build_spiral_condenser"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="RecipeData" load_steps=5 format=3 uid="uid://1gjkgbhndhc4"]
+
+[ext_resource type="Script" path="res://global/resource_quantity.gd" id="1_xd74l"]
+[ext_resource type="Resource" uid="uid://dtl2g2ke4ocg5" path="res://resources/basic_resources/basic_resource_b.tres" id="2_o0jt7"]
+[ext_resource type="Script" path="res://resources/recipes/recipe.gd" id="3_6q6qs"]
+
+[sub_resource type="Resource" id="Resource_n01pv"]
+script = ExtResource("1_xd74l")
+resource = ExtResource("2_o0jt7")
+quantity = 5
+
+[resource]
+script = ExtResource("3_6q6qs")
+name = "rB Production"
+ingredients = Array[ExtResource("1_xd74l")]([])
+results = Array[ExtResource("1_xd74l")]([SubResource("Resource_n01pv")])
+run_mode = "run_mode_auto_continuous"
+id = "collector_bot_rb_production"

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://74aq2sv6jsos"]
+
+[ext_resource type="Script" path="res://scenes/modules/mining_drill/mining_drill.gd" id="1_4lq72"]
+[ext_resource type="Texture2D" uid="uid://rtfbsdk00m1g" path="res://assets/modules/mining_drill.png" id="2_ydw3b"]
+
+[node name="MiningDrill" type="Node2D"]
+script = ExtResource("1_4lq72")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(246, -135)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ydw3b")

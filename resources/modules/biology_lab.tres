@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ModuleData" load_steps=4 format=3 uid="uid://dbs87mje7jyeo"]
+
+[ext_resource type="Script" path="res://resources/recipes/recipe.gd" id="1_ha05w"]
+[ext_resource type="PackedScene" uid="uid://btnmah2yv3xpv" path="res://scenes/modules/biology_lab/biology_lab.tscn" id="2_41842"]
+[ext_resource type="Script" path="res://resources/modules/module.gd" id="2_rcynn"]
+
+[resource]
+script = ExtResource("2_rcynn")
+name = "Biology Lab"
+scene = ExtResource("2_41842")
+available_from_start = false
+recipes = Array[ExtResource("1_ha05w")]([])
+production_speed_level = 1
+upgradable_speed = false
+upgradable_efficiency = false
+upgradable_automation = false
+id = "biology_lab"

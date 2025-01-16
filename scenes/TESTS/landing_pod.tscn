@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=3 uid="uid://bng5g5d1iqejr"]
+
+[ext_resource type="Script" path="res://scenes/TESTS/landing_pod.gd" id="1_38r30"]
+[ext_resource type="Resource" uid="uid://dpnnfjj4aqeno" path="res://resources/organisms/organism_a.tres" id="2_kj2ko"]
+[ext_resource type="Resource" uid="uid://j57hg3v8mh1l" path="res://resources/basic_resources/basic_resource_c.tres" id="3_7o0df"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_odvgj"]
+size = Vector2(128, 128)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vf4e4"]
+size = Vector2(96, 8)
+
+[sub_resource type="Animation" id="Animation_u6s84"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D3:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_desnn"]
+resource_name = "produce"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(0.5, 0.5), Vector2(1.5, 1.5), Vector2(0.8, 0.8), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D3:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_brcqr"]
+_data = {
+"RESET": SubResource("Animation_u6s84"),
+"produce": SubResource("Animation_desnn")
+}
+
+[node name="LandingPod" type="Node2D"]
+script = ExtResource("1_38r30")
+product = ExtResource("2_kj2ko")
+product_b = ExtResource("3_7o0df")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+texture = SubResource("PlaceholderTexture2D_odvgj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_vf4e4")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+modulate = Color(0, 0.437219, 1, 1)
+texture = SubResource("PlaceholderTexture2D_vf4e4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_brcqr")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="OrganismData" load_steps=3 format=3 uid="uid://dpnnfjj4aqeno"]
+
+[ext_resource type="Script" path="res://resources/organisms/organism.gd" id="1_f6ye6"]
+[ext_resource type="Texture2D" uid="uid://bb6xnsqqwe100" path="res://assets/icons/OA.png" id="1_uvkbg"]
+
+[resource]
+script = ExtResource("1_f6ye6")
+type = 0
+icon = ExtResource("1_uvkbg")
+id = "organism_a"

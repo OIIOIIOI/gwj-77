@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ModuleData" load_steps=6 format=3 uid="uid://c3hxtdxs1xay2"]
+
+[ext_resource type="PackedScene" uid="uid://bqvwiaijwhv7u" path="res://scenes/modules/spiral_condenser/spiral_condenser.tscn" id="1_uwlxm"]
+[ext_resource type="Script" path="res://resources/recipes/recipe.gd" id="1_v50sd"]
+[ext_resource type="Resource" uid="uid://dxahkrrkh4i7g" path="res://resources/recipes/spiral_condenser_rb_production.tres" id="2_i5eec"]
+[ext_resource type="Script" path="res://resources/modules/module.gd" id="2_mdx7f"]
+[ext_resource type="Resource" uid="uid://cga613ae1bcdo" path="res://resources/recipes/spiral_condenser_rc_production.tres" id="3_ske2d"]
+
+[resource]
+script = ExtResource("2_mdx7f")
+name = "Spiral Condenser"
+scene = ExtResource("1_uwlxm")
+available_from_start = false
+recipes = Array[ExtResource("1_v50sd")]([ExtResource("2_i5eec"), ExtResource("3_ske2d")])
+production_speed_level = 1
+upgradable_speed = false
+upgradable_efficiency = false
+upgradable_automation = false
+id = "spiral_condenser"

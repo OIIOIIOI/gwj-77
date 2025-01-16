@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ModuleData" load_steps=6 format=3 uid="uid://bp7lrx4hapnoq"]
+
+[ext_resource type="PackedScene" uid="uid://bboijc7wck4or" path="res://scenes/modules/collector_bot/collector_bot.tscn" id="1_tpcy4"]
+[ext_resource type="Script" path="res://resources/modules/module.gd" id="2_dwl5q"]
+[ext_resource type="Resource" uid="uid://binjr1nojd8bf" path="res://resources/recipes/collector_bot_ra_production.tres" id="2_si3ch"]
+[ext_resource type="Resource" uid="uid://1gjkgbhndhc4" path="res://resources/recipes/collector_bot_rb_production.tres" id="3_7ii6s"]
+[ext_resource type="Script" path="res://resources/recipes/recipe.gd" id="3_gga8j"]
+
+[resource]
+script = ExtResource("2_dwl5q")
+name = "Collector Bot"
+scene = ExtResource("1_tpcy4")
+available_from_start = false
+recipes = Array[ExtResource("3_gga8j")]([ExtResource("2_si3ch"), ExtResource("3_7ii6s")])
+production_speed_level = 1
+upgradable_speed = false
+upgradable_efficiency = false
+upgradable_automation = false
+id = "collector_bot"
