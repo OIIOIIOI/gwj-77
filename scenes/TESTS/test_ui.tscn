@@ -96,5 +96,6 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 min_value = 1.0
-max_value = 8.0
+max_value = 30.0
+step = 2.0
 value = 1.0

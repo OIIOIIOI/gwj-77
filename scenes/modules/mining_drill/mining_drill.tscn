@@ -52,6 +52,5 @@ position = Vector2(246, 32)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(246, 0)
-amount = 16
 process_material = SubResource("ParticleProcessMaterial_qpjmo")
 texture = ExtResource("6_mwlxs")

@@ -31,6 +31,11 @@ func _ready() -> void:
 		core.timer.timeout.connect(on_production_timer_timeout)
 		core.timer.start()
 
+	# If module has recipes, list them
+	recipes = module_data.recipes.duplicate(true)
+	for recipe in recipes:
+		GameEvents.recipe_unlocked.emit(recipe, self)
+
 	GameEvents.recipe_locked.connect(on_recipe_locked)
 
 

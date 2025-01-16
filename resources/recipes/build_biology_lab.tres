@@ -26,7 +26,7 @@ quantity = -500
 [sub_resource type="Resource" id="Resource_sja6s"]
 script = ExtResource("1_opmb4")
 resource = ExtResource("5_2wav5")
-quantity = -200
+quantity = -150
 
 [sub_resource type="Resource" id="Resource_i3v7v"]
 script = ExtResource("1_opmb4")
