@@ -1,7 +1,46 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqvwiaijwhv7u"]
+[gd_scene load_steps=6 format=3 uid="uid://bqvwiaijwhv7u"]
 
 [ext_resource type="Script" path="res://scenes/modules/spiral_condenser/spiral_condenser.gd" id="1_5mrk5"]
 [ext_resource type="Texture2D" uid="uid://d4jbufmxn0pk6" path="res://assets/modules/spiral_condenser.png" id="2_dqw7i"]
+
+[sub_resource type="Animation" id="Animation_yhbro"]
+resource_name = "run"
+length = 0.2
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_r4ynb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x2r5v"]
+_data = {
+"RESET": SubResource("Animation_r4ynb"),
+"run": SubResource("Animation_yhbro")
+}
 
 [node name="SpiralCondenser" type="Node2D"]
 script = ExtResource("1_5mrk5")
@@ -10,7 +49,14 @@ script = ExtResource("1_5mrk5")
 position = Vector2(-251, -144)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_dqw7i")
+hframes = 2
 
 [node name="CoreMarker" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(-251, 32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_x2r5v")
+}
+autoplay = "run"
