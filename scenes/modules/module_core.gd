@@ -9,12 +9,13 @@ extends Node2D
 
 func _ready() -> void:
 	progress_bar.value = 0.0
+	progress_bar.visible = false
 
 
-func _process(delta: float) -> void:
-	if timer.is_stopped() && progress_bar.visible:
-		progress_bar.visible = false
-	elif !timer.is_stopped() && !progress_bar.visible:
-		progress_bar.visible = true
-
-	progress_bar.value = 1.0 - timer.time_left / timer.wait_time
+#func _process(delta: float) -> void:
+	#if timer.is_stopped() && progress_bar.visible:
+		#progress_bar.visible = false
+	#elif !timer.is_stopped() && !progress_bar.visible:
+		#progress_bar.visible = true
+#
+	#progress_bar.value = 1.0 - timer.time_left / timer.wait_time

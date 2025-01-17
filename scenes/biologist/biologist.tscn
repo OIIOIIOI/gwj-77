@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://bejwlo812r714"]
+
+[ext_resource type="Script" path="res://scenes/biologist/biologist.gd" id="1_duqt0"]
+[ext_resource type="Texture2D" uid="uid://pvwbhatotle7" path="res://assets/biologist/biologist.png" id="1_kjgqa"]
+
+[node name="Biologist" type="Node2D"]
+script = ExtResource("1_duqt0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-440, 30)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_kjgqa")
+offset = Vector2(0, -232)
+hframes = 5
+
+[node name="Spots" type="Node2D" parent="."]
+
+[node name="Spot1" type="Marker2D" parent="Spots"]
+z_index = 9
+position = Vector2(-400, 40)
+scale = Vector2(0.6, 0.6)
+
+[node name="Spot2" type="Marker2D" parent="Spots"]
+z_index = 9
+position = Vector2(-105, 40)
+scale = Vector2(0.6, 0.6)
+
+[node name="Spot3" type="Marker2D" parent="Spots"]
+z_index = 9
+position = Vector2(254, 40)
+scale = Vector2(0.6, 0.6)
+
+[node name="Spot4" type="Marker2D" parent="Spots"]
+z_index = 11
+position = Vector2(-700, 0)
+
+[node name="Spot5" type="Marker2D" parent="Spots"]
+z_index = 11
+position = Vector2(835, -110)

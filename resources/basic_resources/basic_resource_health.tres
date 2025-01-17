@@ -1,12 +1,10 @@
 [gd_resource type="Resource" script_class="BasicResourceData" load_steps=3 format=3 uid="uid://3a5l1e8r0xtu"]
 
 [ext_resource type="Script" path="res://resources/basic_resources/basic_resource.gd" id="1_c1bxb"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4f84r"]
-size = Vector2(64, 64)
+[ext_resource type="Texture2D" uid="uid://bacs4ia0p0uic" path="res://assets/icons/RE.png" id="1_qcmak"]
 
 [resource]
 script = ExtResource("1_c1bxb")
 type = 4
-icon = SubResource("PlaceholderTexture2D_4f84r")
+icon = ExtResource("1_qcmak")
 id = "basic_resource_health"

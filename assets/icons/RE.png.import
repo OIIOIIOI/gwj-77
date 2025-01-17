@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy8xb6j4e53ag"
-path="res://.godot/imported/mining_drill_screw.png-77152bd22109e7713cf8ede2091b5bfd.ctex"
+uid="uid://bacs4ia0p0uic"
+path="res://.godot/imported/RE.png-11d895e9af8bb1d026f6edc09efe9c9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/modules/mining_drill_screw.png"
-dest_files=["res://.godot/imported/mining_drill_screw.png-77152bd22109e7713cf8ede2091b5bfd.ctex"]
+source_file="res://assets/icons/RE.png"
+dest_files=["res://.godot/imported/RE.png-11d895e9af8bb1d026f6edc09efe9c9d.ctex"]
 
 [params]
 

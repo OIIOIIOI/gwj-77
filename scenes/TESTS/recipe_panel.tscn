@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbxrj06nb88vf"]
 
-[ext_resource type="Theme" uid="uid://jil4di7vynr5" path="res://assets/theme.tres" id="1_0waaq"]
+[ext_resource type="Theme" uid="uid://jil4di7vynr5" path="res://assets/ui/theme.tres" id="1_0waaq"]
 [ext_resource type="Script" path="res://scenes/TESTS/recipe_panel.gd" id="2_8lpxt"]
 
 [node name="RecipePanel" type="PanelContainer"]

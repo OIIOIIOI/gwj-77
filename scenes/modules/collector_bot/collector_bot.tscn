@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bboijc7wck4or"]
+[gd_scene load_steps=8 format=3 uid="uid://bboijc7wck4or"]
 
 [ext_resource type="Script" path="res://scenes/modules/collector_bot/collector_bot.gd" id="1_k3tfb"]
 [ext_resource type="Texture2D" uid="uid://b7vr6j56woibt" path="res://assets/modules/collector_base.png" id="2_tcqie"]
 [ext_resource type="Texture2D" uid="uid://yiyhkld68jlq" path="res://assets/modules/collector_bot.png" id="3_qfiqa"]
+[ext_resource type="Texture2D" uid="uid://dg0xu8xwagu5i" path="res://assets/modules/collector_base_window.png" id="4_41455"]
 
 [sub_resource type="Animation" id="Animation_isbnk"]
 length = 0.001
@@ -37,6 +38,18 @@ tracks/2/path = NodePath("Bot:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Window:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -83,6 +96,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Window:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tgipn"]
 _data = {
@@ -95,7 +120,7 @@ script = ExtResource("1_k3tfb")
 
 [node name="Bot" type="Sprite2D" parent="."]
 position = Vector2(561, 0)
-scale = Vector2(0.45, 0.45)
+scale = Vector2(0.35, 0.35)
 texture = ExtResource("3_qfiqa")
 offset = Vector2(0, -202)
 hframes = 2
@@ -104,6 +129,12 @@ hframes = 2
 position = Vector2(437, -106)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_tcqie")
+
+[node name="Window" type="Sprite2D" parent="."]
+position = Vector2(439, -126)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_41455")
+hframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

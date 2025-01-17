@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3l21gl5lr00c"
-path="res://.godot/imported/mining_drill_mask.png-062351ffe38c19a35d23a314f7dae135.ctex"
+uid="uid://drw64j7t53fxk"
+path="res://.godot/imported/rounded_rect_150x150x50.png-245270a0fbe995ae50cbdd6584d8687f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/modules/mining_drill_mask.png"
-dest_files=["res://.godot/imported/mining_drill_mask.png-062351ffe38c19a35d23a314f7dae135.ctex"]
+source_file="res://assets/ui/rounded_rect_150x150x50.png"
+dest_files=["res://.godot/imported/rounded_rect_150x150x50.png-245270a0fbe995ae50cbdd6584d8687f.ctex"]
 
 [params]
 

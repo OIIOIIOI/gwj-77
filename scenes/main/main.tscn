@@ -1,45 +1,69 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4qox24w13h87"]
+[gd_scene load_steps=10 format=3 uid="uid://b4qox24w13h87"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_trb2y"]
 [ext_resource type="PackedScene" uid="uid://chyubqsufarwa" path="res://scenes/TESTS/test_ui.tscn" id="2_63hjy"]
-[ext_resource type="Texture2D" uid="uid://bc5rayhfc24ur" path="res://assets/ui/add_module.png" id="2_mlg52"]
+[ext_resource type="Texture2D" uid="uid://dd847hd74ak80" path="res://assets/misc/hills.png" id="3_qhw5a"]
+[ext_resource type="Texture2D" uid="uid://by4wt4sme5aqx" path="res://assets/ui/rect_50x50.png" id="4_l3akm"]
+[ext_resource type="PackedScene" uid="uid://rew64mf6uycr" path="res://scenes/ui/health_bar/health_bar.tscn" id="6_4sro1"]
+[ext_resource type="Theme" uid="uid://jil4di7vynr5" path="res://assets/ui/theme.tres" id="6_448d0"]
+[ext_resource type="PackedScene" uid="uid://bejwlo812r714" path="res://scenes/biologist/biologist.tscn" id="7_4vkud"]
+[ext_resource type="PackedScene" uid="uid://cy4xsq0b27oqo" path="res://scenes/ui/cards/cards_container.tscn" id="8_3ex6m"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6h5n2"]
-size = Vector2(1920, 8)
+size = Vector2(1920, 10)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_trb2y")
 
 [node name="Base" type="Node2D" parent="."]
-position = Vector2(960, 648)
+position = Vector2(960, 550)
 
-[node name="AddCollectorBot" type="Sprite2D" parent="Base"]
-position = Vector2(437, -105)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_mlg52")
+[node name="Modules" type="Node2D" parent="Base"]
+position = Vector2(-32, 0)
+scale = Vector2(0.7, 0.7)
 
-[node name="AddBiologyLab" type="Sprite2D" parent="Base"]
-position = Vector2(45, -442)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_mlg52")
+[node name="Biologist" parent="Base" instance=ExtResource("7_4vkud")]
 
-[node name="AddMiningDrill" type="Sprite2D" parent="Base"]
-position = Vector2(246, -135)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_mlg52")
-
-[node name="AddSpiralCondenser" type="Sprite2D" parent="Base"]
-position = Vector2(-251, -144)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_mlg52")
-
-[node name="Ground" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
+[node name="Ground" type="Node2D" parent="Base"]
 z_index = 2
-position = Vector2(959, 648)
+
+[node name="Fill" type="Sprite2D" parent="Base/Ground"]
+modulate = Color(0.972549, 0.917647, 0.831373, 1)
+position = Vector2(63.5, 47)
+scale = Vector2(23.14, 1.8)
+texture = ExtResource("4_l3akm")
+
+[node name="Top" type="Sprite2D" parent="Base/Ground"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-1, 0)
 texture = SubResource("PlaceholderTexture2D_6h5n2")
 
-[node name="ResourcesUI" parent="." instance=ExtResource("2_63hjy")]
+[node name="Hills" type="Sprite2D" parent="Base"]
+z_index = 10
+position = Vector2(0, -68)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("3_qhw5a")
 
-[node name="GettingOldTimer" type="Timer" parent="."]
-autostart = true
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_448d0")
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 32
+
+[node name="HealthBar" parent="UI/MarginContainer" instance=ExtResource("6_4sro1")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="CardsContainer" parent="UI/MarginContainer" instance=ExtResource("8_3ex6m")]
+layout_mode = 2
+
+[node name="Debug" parent="." instance=ExtResource("2_63hjy")]

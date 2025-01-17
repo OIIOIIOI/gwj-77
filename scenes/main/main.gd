@@ -8,8 +8,7 @@ const MODULE_LANDING_POD = preload("res://resources/modules/landing_pod.tres")
 var built_modules: Dictionary = {}
 
 
-@onready var base_container: Node2D = $Base
-@onready var getting_old_timer: Timer = $GettingOldTimer
+@onready var base_container: Node2D = $Base/Modules
 
 
 func _ready() -> void:
@@ -19,8 +18,6 @@ func _ready() -> void:
 	# Receive starting resources
 	Inventory.update_game_resource(BASIC_RESOURCE_HEALTH, Inventory.MAX_HEALTH)
 	Inventory.update_game_resource(MODULE_LANDING_POD, 1)
-
-	getting_old_timer.timeout.connect(on_getting_old_timer_timeout)
 
 
 func on_new_game_resource_updated(resource: GameResourceData, new_quantity: int) -> void:
@@ -36,7 +33,3 @@ func on_new_game_resource_updated(resource: GameResourceData, new_quantity: int)
 		base_container.add_child(module_instance)
 		# Store in dictionary
 		built_modules[module_data] = module_instance
-
-
-func on_getting_old_timer_timeout() -> void:
-	Inventory.update_game_resource(BASIC_RESOURCE_HEALTH, -1)

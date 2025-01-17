@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc5rayhfc24ur"
-path="res://.godot/imported/add_module.png-535b5a5bbee9db0c6e038b5b2e42df27.ctex"
+uid="uid://8ty5is256cm7"
+path="res://.godot/imported/rounded_rect_45x45x15.png-dc6c03bc7dbe93e35febe3add05d2a48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/add_module.png"
-dest_files=["res://.godot/imported/add_module.png-535b5a5bbee9db0c6e038b5b2e42df27.ctex"]
+source_file="res://assets/ui/rounded_rect_45x45x15.png"
+dest_files=["res://.godot/imported/rounded_rect_45x45x15.png-dc6c03bc7dbe93e35febe3add05d2a48.ctex"]
 
 [params]
 

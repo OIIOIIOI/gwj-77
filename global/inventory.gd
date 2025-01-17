@@ -8,7 +8,23 @@ var organisms: Dictionary = {}
 var modules: Dictionary = {}
 
 
-func get_resource_quantity(dictionary: Dictionary, resource: GameResourceData) -> int:
+func get_resource_quantity(resource: GameResourceData) -> int:
+	# Find resource dictionary
+	var resource_dict = null
+	if resource is BasicResourceData:
+		resource_dict = basic_resources
+	elif resource is OrganismData:
+		resource_dict = organisms
+	elif resource is ModuleData:
+		resource_dict = modules
+	else:
+		print("Resource type not found: ", resource.id)
+		return 0
+
+	return get_resource_quantity_from_dictionary(resource_dict, resource)
+
+
+func get_resource_quantity_from_dictionary(dictionary: Dictionary, resource: GameResourceData) -> int:
 	if dictionary.has(resource):
 		return dictionary[resource]
 	else:
@@ -29,7 +45,7 @@ func update_game_resource(resource: GameResourceData, quantity: int, simulate :=
 		return false
 
 	# Check if update is valid (has enough resource when quantity is negative)
-	if quantity < 0 && get_resource_quantity(resource_dict, resource) < -quantity:
+	if quantity < 0 && get_resource_quantity_from_dictionary(resource_dict, resource) < -quantity:
 		print("Not enough resource in Inventory: ", resource.id)
 		return false
 

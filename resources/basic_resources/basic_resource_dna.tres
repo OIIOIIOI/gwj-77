@@ -1,12 +1,10 @@
 [gd_resource type="Resource" script_class="BasicResourceData" load_steps=3 format=3 uid="uid://dlv4r7pg1emp0"]
 
+[ext_resource type="Texture2D" uid="uid://bpcjcg3vq77ew" path="res://assets/icons/RD.png" id="1_77llv"]
 [ext_resource type="Script" path="res://resources/basic_resources/basic_resource.gd" id="1_b2a6b"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4f84r"]
-size = Vector2(64, 64)
 
 [resource]
 script = ExtResource("1_b2a6b")
 type = 3
-icon = SubResource("PlaceholderTexture2D_4f84r")
+icon = ExtResource("1_77llv")
 id = "basic_resource_dna"

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy4xsq0b27oqo"]
+
+[ext_resource type="Script" path="res://scenes/ui/cards/cards_container.gd" id="1_jebrk"]
+
+[node name="CardsContainer" type="HBoxContainer"]
+size_flags_vertical = 8
+theme_override_constants/separation = 16
+alignment = 1
+script = ExtResource("1_jebrk")

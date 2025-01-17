@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://rxk7slpqhwbq"]
+
+[ext_resource type="Theme" uid="uid://jil4di7vynr5" path="res://assets/ui/theme.tres" id="1_185hv"]
+[ext_resource type="Texture2D" uid="uid://c8w2bcmqk75ea" path="res://assets/ui/rounded_rect_75x75x25.png" id="2_me0hb"]
+[ext_resource type="Script" path="res://scenes/ui/cards/recipe_card.gd" id="3_qoe4h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l61lh"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("2_me0hb")
+texture_margin_left = 25.0
+texture_margin_top = 25.0
+texture_margin_right = 25.0
+texture_margin_bottom = 25.0
+modulate_color = Color(0.929412, 0.835294, 0.698039, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_85qdn"]
+size = Vector2(256, 256)
+
+[node name="RecipeCard" type="PanelContainer"]
+custom_minimum_size = Vector2(270, 420)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_185hv")
+theme_override_styles/panel = SubResource("StyleBoxTexture_l61lh")
+script = ExtResource("3_qoe4h")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ResourceIcon" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_vertical = 0
+texture = SubResource("PlaceholderTexture2D_85qdn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="QuantityLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "x"
+horizontal_alignment = 1
+justification_flags = 0
+
+[node name="IngredientsList" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="CraftButton" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "CRAFT"

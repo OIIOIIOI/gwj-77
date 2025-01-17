@@ -1,15 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://74aq2sv6jsos"]
+[gd_scene load_steps=10 format=3 uid="uid://74aq2sv6jsos"]
 
 [ext_resource type="Script" path="res://scenes/modules/mining_drill/mining_drill.gd" id="1_4lq72"]
 [ext_resource type="Texture2D" uid="uid://rtfbsdk00m1g" path="res://assets/modules/mining_drill.png" id="2_ydw3b"]
-[ext_resource type="Shader" uid="uid://bufm20etn6vqb" path="res://scenes/TESTS/test_shader.tres" id="3_wbnra"]
-[ext_resource type="Texture2D" uid="uid://c3l21gl5lr00c" path="res://assets/modules/mining_drill_mask.png" id="4_ki0mu"]
-[ext_resource type="Texture2D" uid="uid://cy8xb6j4e53ag" path="res://assets/modules/mining_drill_screw.png" id="5_an41s"]
 [ext_resource type="Texture2D" uid="uid://ci8pxnnwmg7mc" path="res://assets/particle.png" id="6_mwlxs"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kbego"]
-shader = ExtResource("3_wbnra")
-shader_parameter/mask_texture = ExtResource("4_ki0mu")
 
 [sub_resource type="Curve" id="Curve_tnube"]
 _data = [Vector2(0, 0.7548), 0.0, 0.0, 0, 0, Vector2(1, 0.299427), 0.0, 0.0, 0, 0]
@@ -30,21 +23,53 @@ initial_velocity_max = 120.0
 gravity = Vector3(0, 150, 0)
 scale_curve = SubResource("CurveTexture_x4r1p")
 
+[sub_resource type="Animation" id="Animation_jl5j2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_nxwmf"]
+resource_name = "run"
+length = 0.5
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qpkej"]
+_data = {
+"RESET": SubResource("Animation_jl5j2"),
+"run": SubResource("Animation_nxwmf")
+}
+
 [node name="MiningDrill" type="Node2D"]
 script = ExtResource("1_4lq72")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(246, -135)
+position = Vector2(246, -143)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ydw3b")
-
-[node name="Screw" type="Sprite2D" parent="."]
-texture_repeat = 2
-material = SubResource("ShaderMaterial_kbego")
-position = Vector2(246, -135)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_an41s")
-region_rect = Rect2(0, 0, 335, 480)
+hframes = 2
 
 [node name="CoreMarker" type="Marker2D" parent="."]
 unique_name_in_owner = true
@@ -54,3 +79,9 @@ position = Vector2(246, 32)
 position = Vector2(246, 0)
 process_material = SubResource("ParticleProcessMaterial_qpjmo")
 texture = ExtResource("6_mwlxs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qpkej")
+}
+autoplay = "run"

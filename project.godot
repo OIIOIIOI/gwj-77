@@ -34,4 +34,4 @@ enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(1, 0.898039, 0.792157, 1)
+environment/defaults/default_clear_color=Color(1, 0.968627, 0.913725, 1)
