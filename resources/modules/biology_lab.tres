@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="ModuleData" load_steps=10 format=3 uid="uid://dbs87mje7jyeo"]
+[gd_resource type="Resource" script_class="ModuleData" load_steps=11 format=3 uid="uid://dbs87mje7jyeo"]
 
 [ext_resource type="Script" path="res://resources/recipes/recipe.gd" id="1_ha05w"]
 [ext_resource type="Script" path="res://resources/recipes/module_production.gd" id="1_lpna1"]
 [ext_resource type="PackedScene" uid="uid://btnmah2yv3xpv" path="res://scenes/modules/biology_lab/biology_lab.tscn" id="2_41842"]
 [ext_resource type="Resource" uid="uid://dlv4r7pg1emp0" path="res://resources/basic_resources/basic_resource_dna.tres" id="2_ghx35"]
 [ext_resource type="Script" path="res://resources/modules/module.gd" id="2_rcynn"]
+[ext_resource type="Texture2D" uid="uid://udtrqf4bpxp8" path="res://assets/icons/biology_lab.png" id="3_elk38"]
 [ext_resource type="Resource" uid="uid://cn57blnfgt2my" path="res://resources/recipes/produce_organism_a.tres" id="4_dfemj"]
 [ext_resource type="Resource" uid="uid://cy2t22655gxbn" path="res://resources/recipes/produce_organism_c.tres" id="4_gciqc"]
 [ext_resource type="Resource" uid="uid://cxrjeak7sk711" path="res://resources/recipes/produce_organism_b.tres" id="5_5rifn"]
@@ -19,6 +20,7 @@ id = ""
 script = ExtResource("2_rcynn")
 name = "Biology Lab"
 scene = ExtResource("2_41842")
+icon = ExtResource("3_elk38")
 available_from_start = false
 upgradable = false
 default_production = Array[ExtResource("1_lpna1")]([SubResource("Resource_k0jy7")])

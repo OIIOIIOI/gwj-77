@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ModuleData" load_steps=9 format=3 uid="uid://c3hxtdxs1xay2"]
+[gd_resource type="Resource" script_class="ModuleData" load_steps=10 format=3 uid="uid://c3hxtdxs1xay2"]
 
 [ext_resource type="Script" path="res://resources/recipes/module_production.gd" id="1_eosud"]
 [ext_resource type="PackedScene" uid="uid://bqvwiaijwhv7u" path="res://scenes/modules/spiral_condenser/spiral_condenser.tscn" id="1_uwlxm"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://resources/modules/module.gd" id="2_mdx7f"]
 [ext_resource type="Resource" uid="uid://dtl2g2ke4ocg5" path="res://resources/basic_resources/basic_resource_b.tres" id="2_vevr0"]
 [ext_resource type="Resource" uid="uid://j57hg3v8mh1l" path="res://resources/basic_resources/basic_resource_c.tres" id="3_03v5l"]
+[ext_resource type="Texture2D" uid="uid://dg6iokot4mh1u" path="res://assets/icons/spiral_condenser.png" id="4_djh3q"]
 
 [sub_resource type="Resource" id="Resource_45o33"]
 script = ExtResource("1_eosud")
@@ -23,6 +24,7 @@ id = ""
 script = ExtResource("2_mdx7f")
 name = "Spiral Condenser"
 scene = ExtResource("1_uwlxm")
+icon = ExtResource("4_djh3q")
 available_from_start = false
 upgradable = true
 default_production = Array[ExtResource("1_eosud")]([SubResource("Resource_45o33"), SubResource("Resource_nb3lj")])

@@ -20,7 +20,7 @@ modulate_color = Color(0.929412, 0.835294, 0.698039, 1)
 size = Vector2(256, 256)
 
 [node name="ResourceCard" type="PanelContainer"]
-custom_minimum_size = Vector2(270, 420)
+custom_minimum_size = Vector2(270, 400)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_dvyg1")

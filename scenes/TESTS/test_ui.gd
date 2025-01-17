@@ -1,8 +1,7 @@
 extends CanvasLayer
 
 
-@onready var label: Label = $MarginContainer/VBoxContainer2/Label
-@onready var h_slider: HSlider = $MarginContainer/VBoxContainer2/HSlider
+@onready var h_slider: HSlider = $MarginContainer/HSlider
 
 
 func _ready() -> void:
@@ -12,5 +11,4 @@ func _ready() -> void:
 
 
 func on_slider_value_changed(value: float) -> void:
-	label.text = "Time Scale: " + str(h_slider.value)
 	Engine.time_scale = h_slider.value

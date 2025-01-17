@@ -22,6 +22,8 @@ func on_new_game_resource_updated(resource: GameResourceData, _new_quantity: int
 	add_child(card)
 	card.set_target_resource(resource)
 
+	sort_cards()
+
 
 func on_recipe_unlocked(recipe: RecipeData, source: Module) -> void:
 	# Only add a recipe panel if recipe is run manually
@@ -31,3 +33,40 @@ func on_recipe_unlocked(recipe: RecipeData, source: Module) -> void:
 	var card = SCENE_RECIPE_CARD.instantiate() as RecipeCard
 	add_child(card)
 	card.set_target_recipe(recipe, source)
+
+	sort_cards()
+
+
+func sort_cards() -> void:
+	var basic = []
+	var organisms = []
+	var species = []
+	var buildings = []
+
+	for child in get_children():
+		if child is ResourceCard:
+			basic.append(child)
+		elif child is RecipeCard:
+			var result = child.get_recipe_result()
+			if result is BasicResourceData:
+				basic.append(child)
+			elif result is OrganismData:
+				organisms.append(child)
+			elif result is SpeciesData:
+				species.append(child)
+			elif result is ModuleData:
+				buildings.append(child)
+
+	var i = 0
+	for child in basic:
+		move_child(child, i)
+		i += 1
+	for child in organisms:
+		move_child(child, i)
+		i += 1
+	for child in species:
+		move_child(child, i)
+		i += 1
+	for child in buildings:
+		move_child(child, i)
+		i += 1

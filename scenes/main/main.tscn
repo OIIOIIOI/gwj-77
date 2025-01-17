@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4qox24w13h87"]
+[gd_scene load_steps=11 format=3 uid="uid://b4qox24w13h87"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_trb2y"]
 [ext_resource type="PackedScene" uid="uid://chyubqsufarwa" path="res://scenes/TESTS/test_ui.tscn" id="2_63hjy"]
@@ -8,6 +8,7 @@
 [ext_resource type="Theme" uid="uid://jil4di7vynr5" path="res://assets/ui/theme.tres" id="6_448d0"]
 [ext_resource type="PackedScene" uid="uid://bejwlo812r714" path="res://scenes/biologist/biologist.tscn" id="7_4vkud"]
 [ext_resource type="PackedScene" uid="uid://cy4xsq0b27oqo" path="res://scenes/ui/cards/cards_container.tscn" id="8_3ex6m"]
+[ext_resource type="Texture2D" uid="uid://caxj0ype111he" path="res://assets/ui/scene_mask.png" id="9_vab28"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6h5n2"]
 size = Vector2(1920, 10)
@@ -16,7 +17,7 @@ size = Vector2(1920, 10)
 script = ExtResource("1_trb2y")
 
 [node name="Base" type="Node2D" parent="."]
-position = Vector2(960, 550)
+position = Vector2(960, 545)
 
 [node name="Modules" type="Node2D" parent="Base"]
 position = Vector2(-32, 0)
@@ -46,6 +47,15 @@ texture = ExtResource("3_qhw5a")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
+[node name="Mask" type="TextureRect" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_vab28")
+
 [node name="MarginContainer" type="MarginContainer" parent="UI"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -53,9 +63,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_448d0")
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 16
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
 [node name="HealthBar" parent="UI/MarginContainer" instance=ExtResource("6_4sro1")]
@@ -63,7 +73,27 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
-[node name="CardsContainer" parent="UI/MarginContainer" instance=ExtResource("8_3ex6m")]
+[node name="MarginContainer2" type="MarginContainer" parent="UI"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -478.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/MarginContainer2"]
+custom_minimum_size = Vector2(1856, 410)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+vertical_scroll_mode = 0
+
+[node name="CardsContainer" parent="UI/MarginContainer2/ScrollContainer" instance=ExtResource("8_3ex6m")]
 layout_mode = 2
 
 [node name="Debug" parent="." instance=ExtResource("2_63hjy")]

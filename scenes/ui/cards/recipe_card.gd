@@ -22,6 +22,8 @@ func _ready() -> void:
 	craft_button.disabled = true
 	craft_button.pressed.connect(on_craft_button_pressed)
 
+	quantity_label.text = ""
+
 	if target_recipe:
 		create_ingredients_slots()
 		update_ui()
@@ -71,7 +73,8 @@ func update_ui() -> void:
 	if "icon" in resource:
 		resource_icon.texture = resource.icon
 
-	quantity_label.text = "x " + str(Inventory.get_resource_quantity(resource))
+	if !resource is ModuleData:
+		quantity_label.text = str(Inventory.get_resource_quantity(resource))
 
 	check_ingredients()
 

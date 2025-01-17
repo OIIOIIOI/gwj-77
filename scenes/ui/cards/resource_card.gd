@@ -27,4 +27,4 @@ func update_ui() -> void:
 	if "icon" in target_resource:
 		resource_icon.texture = target_resource.icon
 
-	quantity_label.text = "x " + str(Inventory.get_resource_quantity(target_resource))
+	quantity_label.text = str(Inventory.get_resource_quantity(target_resource))
