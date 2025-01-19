@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dn84hd24yx28q"]
+
+[ext_resource type="Theme" uid="uid://jil4di7vynr5" path="res://assets/ui/theme.tres" id="1_hod43"]
+[ext_resource type="Texture2D" uid="uid://8ty5is256cm7" path="res://assets/ui/rounded_rect_45x45x15.png" id="1_ywr2w"]
+[ext_resource type="Script" path="res://scenes/ui/resource_tab/resource_tab.gd" id="2_pftsh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_76lyd"]
+texture = ExtResource("1_ywr2w")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+modulate_color = Color(0.929412, 0.835294, 0.698039, 1)
+
+[node name="ResourceTab" type="PanelContainer"]
+custom_minimum_size = Vector2(100, 80)
+theme = ExtResource("1_hod43")
+theme_override_styles/panel = SubResource("StyleBoxTexture_76lyd")
+script = ExtResource("2_pftsh")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 0

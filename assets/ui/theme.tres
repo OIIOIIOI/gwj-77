@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=18 format=3 uid="uid://jil4di7vynr5"]
+[gd_resource type="Theme" load_steps=23 format=3 uid="uid://jil4di7vynr5"]
 
 [ext_resource type="FontFile" uid="uid://dusrm0ddauj7c" path="res://assets/ui/bebasneue.ttf" id="1_0qpq7"]
 [ext_resource type="Texture2D" uid="uid://dwyou1e1jypto" path="res://assets/ui/rounded_rect_30x30x10.png" id="1_ktyg5"]
@@ -105,6 +105,41 @@ bg_color = Color(0.401564, 0.401564, 0.401564, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mphmr"]
 bg_color = Color(1, 1, 1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxr6d"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.631373, 0.568627, 0.470588, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4nmv"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.215686, 0.258824, 0.4, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_itcxv"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.109804, 0.129412, 0.2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fm0ib"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.160784, 0.192157, 0.298039, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yme11"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.109804, 0.129412, 0.2, 1)
+
 [resource]
 default_font = ExtResource("1_0qpq7")
 default_font_size = 32
@@ -129,3 +164,10 @@ PanelContainer/styles/panel = SubResource("StyleBoxFlat_ne03d")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_7tggf")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_mphmr")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+SmallButton/base_type = &"Button"
+SmallButton/font_sizes/font_size = 28
+SmallButton/styles/disabled = SubResource("StyleBoxFlat_oxr6d")
+SmallButton/styles/hover = SubResource("StyleBoxFlat_a4nmv")
+SmallButton/styles/hover_pressed = SubResource("StyleBoxFlat_itcxv")
+SmallButton/styles/normal = SubResource("StyleBoxFlat_fm0ib")
+SmallButton/styles/pressed = SubResource("StyleBoxFlat_yme11")

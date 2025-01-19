@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://k23hcelpn6gy"]
+
+[ext_resource type="Theme" uid="uid://jil4di7vynr5" path="res://assets/ui/theme.tres" id="1_b7scs"]
+[ext_resource type="Texture2D" uid="uid://8ty5is256cm7" path="res://assets/ui/rounded_rect_45x45x15.png" id="2_l4mx0"]
+[ext_resource type="Script" path="res://scenes/ui/success_tab/success_tab.gd" id="3_p20d3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u4cnh"]
+texture = ExtResource("2_l4mx0")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+modulate_color = Color(0.929412, 0.835294, 0.698039, 1)
+
+[node name="SuccessTab" type="PanelContainer"]
+custom_minimum_size = Vector2(100, 32)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -355.0
+offset_bottom = 58.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme = ExtResource("1_b7scs")
+theme_override_styles/panel = SubResource("StyleBoxTexture_u4cnh")
+script = ExtResource("3_p20d3")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = -2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "Populate the planet with new species"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0

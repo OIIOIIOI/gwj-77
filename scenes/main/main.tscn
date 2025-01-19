@@ -1,14 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://b4qox24w13h87"]
+[gd_scene load_steps=13 format=3 uid="uid://b4qox24w13h87"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_trb2y"]
-[ext_resource type="PackedScene" uid="uid://chyubqsufarwa" path="res://scenes/TESTS/test_ui.tscn" id="2_63hjy"]
 [ext_resource type="Texture2D" uid="uid://dd847hd74ak80" path="res://assets/misc/hills.png" id="3_qhw5a"]
 [ext_resource type="Texture2D" uid="uid://by4wt4sme5aqx" path="res://assets/ui/rect_50x50.png" id="4_l3akm"]
 [ext_resource type="PackedScene" uid="uid://rew64mf6uycr" path="res://scenes/ui/health_bar/health_bar.tscn" id="6_4sro1"]
 [ext_resource type="Theme" uid="uid://jil4di7vynr5" path="res://assets/ui/theme.tres" id="6_448d0"]
 [ext_resource type="PackedScene" uid="uid://bejwlo812r714" path="res://scenes/biologist/biologist.tscn" id="7_4vkud"]
 [ext_resource type="PackedScene" uid="uid://cy4xsq0b27oqo" path="res://scenes/ui/cards/cards_container.tscn" id="8_3ex6m"]
+[ext_resource type="Script" path="res://scenes/ui/resource_tab/resource_tabs_container.gd" id="9_6bf6o"]
+[ext_resource type="PackedScene" uid="uid://gep7ajcfthfc" path="res://scenes/ui/time_scale_button.tscn" id="9_av7w5"]
 [ext_resource type="Texture2D" uid="uid://caxj0ype111he" path="res://assets/ui/scene_mask.png" id="9_vab28"]
+[ext_resource type="PackedScene" uid="uid://k23hcelpn6gy" path="res://scenes/ui/success_tab/success_tab.tscn" id="11_ii8k5"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6h5n2"]
 size = Vector2(1920, 10)
@@ -56,7 +58,7 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("9_vab28")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI"]
+[node name="HealthContainer" type="MarginContainer" parent="UI"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -68,12 +70,12 @@ theme_override_constants/margin_top = 64
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="HealthBar" parent="UI/MarginContainer" instance=ExtResource("6_4sro1")]
+[node name="HealthBar" parent="UI/HealthContainer" instance=ExtResource("6_4sro1")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
-[node name="MarginContainer2" type="MarginContainer" parent="UI"]
+[node name="BottomContainer" type="MarginContainer" parent="UI"]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -86,15 +88,79 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 32
 
-[node name="ScrollContainer" type="ScrollContainer" parent="UI/MarginContainer2"]
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/BottomContainer"]
 custom_minimum_size = Vector2(1920, 410)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 vertical_scroll_mode = 0
 
-[node name="CardsContainer" parent="UI/MarginContainer2/ScrollContainer" node_paths=PackedStringArray("scroll_parent") instance=ExtResource("8_3ex6m")]
+[node name="CardsContainer" parent="UI/BottomContainer/ScrollContainer" node_paths=PackedStringArray("scroll_parent") instance=ExtResource("8_3ex6m")]
 layout_mode = 2
 scroll_parent = NodePath("..")
 
-[node name="Debug" parent="." instance=ExtResource("2_63hjy")]
+[node name="TabsContainer" type="MarginContainer" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("6_448d0")
+theme_override_constants/margin_left = -16
+theme_override_constants/margin_top = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/TabsContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/TabsContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 72
+theme_override_constants/margin_top = 56
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 24
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/TabsContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Button" parent="UI/TabsContainer/VBoxContainer/MarginContainer/HBoxContainer" groups=["time_scale_buttons"] instance=ExtResource("9_av7w5")]
+layout_mode = 2
+disabled = true
+text = "x0"
+
+[node name="Button2" parent="UI/TabsContainer/VBoxContainer/MarginContainer/HBoxContainer" groups=["time_scale_buttons"] instance=ExtResource("9_av7w5")]
+layout_mode = 2
+text = "x0"
+time_scale = 4.0
+
+[node name="Button3" parent="UI/TabsContainer/VBoxContainer/MarginContainer/HBoxContainer" groups=["time_scale_buttons"] instance=ExtResource("9_av7w5")]
+layout_mode = 2
+text = "x0"
+time_scale = 8.0
+
+[node name="Button4" parent="UI/TabsContainer/VBoxContainer/MarginContainer/HBoxContainer" groups=["time_scale_buttons"] instance=ExtResource("9_av7w5")]
+layout_mode = 2
+text = "x0"
+time_scale = 16.0
+
+[node name="ResourceTabsContainer" type="VBoxContainer" parent="UI/TabsContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+script = ExtResource("9_6bf6o")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+custom_minimum_size = Vector2(1200, 602)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = -16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="SuccessTab" parent="UI/MarginContainer/VBoxContainer" instance=ExtResource("11_ii8k5")]
+layout_mode = 2

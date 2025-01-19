@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://gep7ajcfthfc"]
+
+[ext_resource type="Theme" uid="uid://jil4di7vynr5" path="res://assets/ui/theme.tres" id="1_8l3vq"]
+[ext_resource type="Script" path="res://scenes/ui/time_scale_button.gd" id="2_e1hsk"]
+
+[node name="Button" type="Button"]
+theme = ExtResource("1_8l3vq")
+theme_type_variation = &"SmallButton"
+text = "x1
+"
+script = ExtResource("2_e1hsk")

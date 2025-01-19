@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="ModuleData" load_steps=15 format=3 uid="uid://j4jfpjjx8ttl"]
+[gd_resource type="Resource" script_class="ModuleData" load_steps=16 format=3 uid="uid://j4jfpjjx8ttl"]
 
 [ext_resource type="Script" path="res://resources/recipes/module_production.gd" id="1_4pkud"]
+[ext_resource type="Texture2D" uid="uid://64u1ddihdefs" path="res://assets/icons/dna_splicer.png" id="2_so05i"]
 [ext_resource type="Script" path="res://resources/recipes/recipe.gd" id="2_stott"]
 [ext_resource type="Resource" uid="uid://xcrnr582vi1u" path="res://resources/recipes/produce_species_aaa.tres" id="3_27jks"]
 [ext_resource type="Script" path="res://resources/modules/module.gd" id="3_ayj5o"]
@@ -19,6 +20,7 @@
 script = ExtResource("3_ayj5o")
 name = "DNA Splicer"
 scene = ExtResource("3_yxla3")
+icon = ExtResource("2_so05i")
 available_from_start = false
 upgradable = false
 default_production = Array[ExtResource("1_4pkud")]([])
