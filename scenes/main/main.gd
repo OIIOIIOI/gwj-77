@@ -21,8 +21,6 @@ func _ready() -> void:
 
 
 func on_new_game_resource_updated(resource: GameResourceData, new_quantity: int) -> void:
-	print("Main - New game resource discovered! ", resource.id)
-
 	# If new resource is a module that has not been built yet
 	if resource is ModuleData && !built_modules.has(resource):
 		# Cast resource

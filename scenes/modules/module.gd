@@ -69,5 +69,5 @@ func on_recipe_locked(recipe: RecipeData, source: Module) -> void:
 	for job in core.jobs.get_children():
 		if job is Job:
 			if job.recipe == recipe:
-				print("Module ", name, " contains a recipe that is now locked: ", recipe.name)
+				#print("Module ", name, " contains a recipe that is now locked: ", recipe.name)
 				job.queue_free()

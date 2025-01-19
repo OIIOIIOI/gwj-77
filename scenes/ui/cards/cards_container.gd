@@ -13,8 +13,6 @@ func _ready() -> void:
 
 
 func on_new_game_resource_updated(resource: GameResourceData, _new_quantity: int) -> void:
-	print("CardsContainer - New game resource discovered! ", resource.id)
-
 	if !resource is BasicResourceData || resource == BASIC_RESOURCE_HEALTH:
 		return
 

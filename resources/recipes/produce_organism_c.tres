@@ -10,17 +10,17 @@
 [sub_resource type="Resource" id="Resource_0t3ml"]
 script = ExtResource("1_u82pb")
 resource = ExtResource("2_bprp4")
-quantity = -100
+quantity = -20
 
 [sub_resource type="Resource" id="Resource_w04vp"]
 script = ExtResource("1_u82pb")
 resource = ExtResource("3_2uirh")
-quantity = -100
+quantity = -20
 
 [sub_resource type="Resource" id="Resource_6ro6q"]
 script = ExtResource("1_u82pb")
 resource = ExtResource("4_0xym1")
-quantity = -10
+quantity = -2
 
 [sub_resource type="Resource" id="Resource_qe0xb"]
 script = ExtResource("1_u82pb")

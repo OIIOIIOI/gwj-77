@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_e0lvu"]
 script = ExtResource("1_35wt8")
 resource = ExtResource("2_6tssk")
-quantity = -30
+quantity = -20
 
 [sub_resource type="Resource" id="Resource_3fnot"]
 script = ExtResource("1_35wt8")

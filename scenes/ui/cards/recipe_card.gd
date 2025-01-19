@@ -91,10 +91,7 @@ func on_recipe_locked(recipe: RecipeData, _source: Module) -> void:
 
 
 func on_craft_button_pressed() -> void:
-	print("CLICKED " + str(craft_button.disabled))
-
 	if target_recipe == null || target_source == null:
 		return
 
-	print("Start recipe: ", target_recipe.name)
 	target_source.run_job(Job.new(target_recipe, true, true))

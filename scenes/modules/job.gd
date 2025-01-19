@@ -34,8 +34,6 @@ func complete_job() -> void:
 		Inventory.batch_update_resources(recipe.results)
 		# Emit event
 		GameEvents.job_complete.emit(recipe.results, source)
-	else:
-		print("Missing ingredients, no result")
 
 	if !one_shot:
 		start()

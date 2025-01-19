@@ -23,6 +23,7 @@ size = Vector2(256, 256)
 custom_minimum_size = Vector2(270, 400)
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 1
 theme = ExtResource("1_185hv")
 theme_override_styles/panel = SubResource("StyleBoxTexture_l61lh")
 script = ExtResource("3_qoe4h")

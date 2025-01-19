@@ -46,7 +46,7 @@ func update_game_resource(resource: GameResourceData, quantity: int, simulate :=
 
 	# Check if update is valid (has enough resource when quantity is negative)
 	if quantity < 0 && get_resource_quantity_from_dictionary(resource_dict, resource) < -quantity:
-		print("Not enough resource in Inventory: ", resource.id)
+		#print("Not enough resource in Inventory: ", resource.id)
 		return false
 
 	# If not simulating
@@ -80,7 +80,6 @@ func batch_simulate_resources(resource_qties: Array[ResourceQuantity]) -> bool:
 	# Simulate each resource update in the list
 	for resource_qty in resource_qties:
 		var result = update_game_resource(resource_qty.resource, resource_qty.quantity, true)
-		print("Checking for ", resource_qty.quantity, " ", resource_qty.resource.id, ": ", result)
 		# If even one simulation fails, stop right there
 		if !result:
 			return false
