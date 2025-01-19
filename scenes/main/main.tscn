@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://scenes/ui/resource_tab/resource_tabs_container.gd" id="9_6bf6o"]
 [ext_resource type="PackedScene" uid="uid://gep7ajcfthfc" path="res://scenes/ui/time_scale_button.tscn" id="9_av7w5"]
 [ext_resource type="Texture2D" uid="uid://caxj0ype111he" path="res://assets/ui/scene_mask.png" id="9_vab28"]
-[ext_resource type="PackedScene" uid="uid://k23hcelpn6gy" path="res://scenes/ui/success_tab/success_tab.tscn" id="11_ii8k5"]
+[ext_resource type="Script" path="res://scenes/ui/success_tab/success_container.gd" id="11_pglnv"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6h5n2"]
 size = Vector2(1920, 10)
@@ -160,7 +160,6 @@ theme_override_constants/margin_bottom = 16
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 8
 alignment = 2
-
-[node name="SuccessTab" parent="UI/MarginContainer/VBoxContainer" instance=ExtResource("11_ii8k5")]
-layout_mode = 2
+script = ExtResource("11_pglnv")

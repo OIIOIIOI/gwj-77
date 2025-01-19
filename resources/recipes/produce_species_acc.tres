@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="RecipeData" load_steps=12 format=3 uid="uid://boriu0phb40rc"]
+[gd_resource type="Resource" script_class="RecipeData" load_steps=11 format=3 uid="uid://boriu0phb40rc"]
 
 [ext_resource type="Script" path="res://global/resource_quantity.gd" id="1_1tbe5"]
 [ext_resource type="Resource" uid="uid://dpnnfjj4aqeno" path="res://resources/organisms/organism_a.tres" id="2_ow2ld"]
@@ -15,12 +15,7 @@ quantity = -1
 [sub_resource type="Resource" id="Resource_35nma"]
 script = ExtResource("1_1tbe5")
 resource = ExtResource("3_4g2fr")
-quantity = -1
-
-[sub_resource type="Resource" id="Resource_jvywq"]
-script = ExtResource("1_1tbe5")
-resource = ExtResource("3_4g2fr")
-quantity = -1
+quantity = -2
 
 [sub_resource type="Resource" id="Resource_roaw1"]
 script = ExtResource("1_1tbe5")
@@ -35,7 +30,7 @@ quantity = 1
 [resource]
 script = ExtResource("6_ih4r5")
 name = "Species ACC"
-ingredients = Array[ExtResource("1_1tbe5")]([SubResource("Resource_negic"), SubResource("Resource_35nma"), SubResource("Resource_jvywq"), SubResource("Resource_roaw1")])
+ingredients = Array[ExtResource("1_1tbe5")]([SubResource("Resource_negic"), SubResource("Resource_35nma"), SubResource("Resource_roaw1")])
 results = Array[ExtResource("1_1tbe5")]([SubResource("Resource_al4q7")])
 run_mode = "run_mode_manual"
 id = "produce_species_acc"
