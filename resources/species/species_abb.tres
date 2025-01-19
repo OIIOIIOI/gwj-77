@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpeciesData" load_steps=3 format=3 uid="uid://dmt816vwfe2ni"]
+
+[ext_resource type="Texture2D" uid="uid://d3h58n0vnolro" path="res://assets/icons/E7.png" id="1_40mhf"]
+[ext_resource type="Script" path="res://resources/species/species.gd" id="2_qj772"]
+
+[resource]
+script = ExtResource("2_qj772")
+type = 6
+icon = ExtResource("1_40mhf")
+id = "species_abb"

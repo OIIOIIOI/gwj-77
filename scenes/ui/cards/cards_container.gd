@@ -7,6 +7,9 @@ const SCENE_RECIPE_CARD = preload("res://scenes/ui/cards/recipe_card.tscn")
 const BASIC_RESOURCE_HEALTH = preload("res://resources/basic_resources/basic_resource_health.tres")
 
 
+@export var scroll_parent: ScrollContainer
+
+
 func _ready() -> void:
 	GameEvents.new_game_resource_updated.connect(on_new_game_resource_updated)
 	GameEvents.recipe_unlocked.connect(on_recipe_unlocked)
@@ -33,6 +36,10 @@ func on_recipe_unlocked(recipe: RecipeData, source: Module) -> void:
 	card.set_target_recipe(recipe, source)
 
 	sort_cards()
+
+	#await get_tree().create_timer(0.1).timeout
+	#if scroll_parent:
+		#scroll_parent.scroll_horizontal = scroll_parent.get_h_scroll_bar().max_value
 
 
 func sort_cards() -> void:

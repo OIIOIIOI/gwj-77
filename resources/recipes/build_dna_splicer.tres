@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="RecipeData" load_steps=13 format=3 uid="uid://vlvudgaegeya"]
+
+[ext_resource type="Script" path="res://global/resource_quantity.gd" id="1_l17cv"]
+[ext_resource type="Resource" uid="uid://dlv4r7pg1emp0" path="res://resources/basic_resources/basic_resource_dna.tres" id="2_el6r0"]
+[ext_resource type="Script" path="res://resources/recipes/recipe.gd" id="2_gbipp"]
+[ext_resource type="Resource" uid="uid://dpnnfjj4aqeno" path="res://resources/organisms/organism_a.tres" id="3_ewxki"]
+[ext_resource type="Resource" uid="uid://c7f3t3n8vmqim" path="res://resources/organisms/organism_b.tres" id="4_0jx8a"]
+[ext_resource type="Resource" uid="uid://b4ic6s2q43k6l" path="res://resources/organisms/organism_c.tres" id="5_utm0n"]
+[ext_resource type="Resource" uid="uid://j4jfpjjx8ttl" path="res://resources/modules/dna_splicer.tres" id="6_iyi4m"]
+
+[sub_resource type="Resource" id="Resource_vceeq"]
+script = ExtResource("1_l17cv")
+resource = ExtResource("2_el6r0")
+quantity = -30
+
+[sub_resource type="Resource" id="Resource_cjorx"]
+script = ExtResource("1_l17cv")
+resource = ExtResource("3_ewxki")
+quantity = -2
+
+[sub_resource type="Resource" id="Resource_0kre0"]
+script = ExtResource("1_l17cv")
+resource = ExtResource("4_0jx8a")
+quantity = -2
+
+[sub_resource type="Resource" id="Resource_e7qk6"]
+script = ExtResource("1_l17cv")
+resource = ExtResource("5_utm0n")
+quantity = -2
+
+[sub_resource type="Resource" id="Resource_ken8o"]
+script = ExtResource("1_l17cv")
+resource = ExtResource("6_iyi4m")
+quantity = 1
+
+[resource]
+script = ExtResource("2_gbipp")
+name = "DNA Splicer"
+ingredients = Array[ExtResource("1_l17cv")]([SubResource("Resource_vceeq"), SubResource("Resource_cjorx"), SubResource("Resource_0kre0"), SubResource("Resource_e7qk6")])
+results = Array[ExtResource("1_l17cv")]([SubResource("Resource_ken8o")])
+run_mode = "run_mode_manual"
+id = ""

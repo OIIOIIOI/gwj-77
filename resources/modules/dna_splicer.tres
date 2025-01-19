@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="ModuleData" load_steps=15 format=3 uid="uid://j4jfpjjx8ttl"]
+
+[ext_resource type="Script" path="res://resources/recipes/module_production.gd" id="1_4pkud"]
+[ext_resource type="Script" path="res://resources/recipes/recipe.gd" id="2_stott"]
+[ext_resource type="Resource" uid="uid://xcrnr582vi1u" path="res://resources/recipes/produce_species_aaa.tres" id="3_27jks"]
+[ext_resource type="Script" path="res://resources/modules/module.gd" id="3_ayj5o"]
+[ext_resource type="PackedScene" uid="uid://cxeonessghck0" path="res://scenes/modules/dna_splicer/dna_splicer.tscn" id="3_yxla3"]
+[ext_resource type="Resource" uid="uid://bqw0gl61i5pxf" path="res://resources/recipes/produce_species_aab.tres" id="4_pws4j"]
+[ext_resource type="Resource" uid="uid://b1gc32l6jbcok" path="res://resources/recipes/produce_species_aac.tres" id="5_vt3bl"]
+[ext_resource type="Resource" uid="uid://73tttyw5g30v" path="res://resources/recipes/produce_species_abb.tres" id="6_hectb"]
+[ext_resource type="Resource" uid="uid://dncac5vq3dl4o" path="res://resources/recipes/produce_species_abc.tres" id="7_3m38j"]
+[ext_resource type="Resource" uid="uid://boriu0phb40rc" path="res://resources/recipes/produce_species_acc.tres" id="8_yyflh"]
+[ext_resource type="Resource" uid="uid://ckv55k3y6vfni" path="res://resources/recipes/produce_species_bbb.tres" id="9_i1u2b"]
+[ext_resource type="Resource" uid="uid://7tnfk7dns1pc" path="res://resources/recipes/produce_species_bbc.tres" id="10_1cx57"]
+[ext_resource type="Resource" uid="uid://bvbuf6yqe6rqc" path="res://resources/recipes/produce_species_bcc.tres" id="11_x5s5f"]
+[ext_resource type="Resource" uid="uid://ce3xj2wiy2iql" path="res://resources/recipes/produce_species_ccc.tres" id="12_06hii"]
+
+[resource]
+script = ExtResource("3_ayj5o")
+name = "DNA Splicer"
+scene = ExtResource("3_yxla3")
+available_from_start = false
+upgradable = false
+default_production = Array[ExtResource("1_4pkud")]([])
+recipes = Array[ExtResource("2_stott")]([ExtResource("3_27jks"), ExtResource("4_pws4j"), ExtResource("5_vt3bl"), ExtResource("6_hectb"), ExtResource("7_3m38j"), ExtResource("8_yyflh"), ExtResource("9_i1u2b"), ExtResource("10_1cx57"), ExtResource("11_x5s5f"), ExtResource("12_06hii")])
+id = "dna_splicer"

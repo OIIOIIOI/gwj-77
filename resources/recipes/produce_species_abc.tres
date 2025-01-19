@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="RecipeData" load_steps=13 format=3 uid="uid://dncac5vq3dl4o"]
+
+[ext_resource type="Script" path="res://global/resource_quantity.gd" id="1_rdyhx"]
+[ext_resource type="Resource" uid="uid://dpnnfjj4aqeno" path="res://resources/organisms/organism_a.tres" id="2_sd3yn"]
+[ext_resource type="Resource" uid="uid://c7f3t3n8vmqim" path="res://resources/organisms/organism_b.tres" id="3_uq0ss"]
+[ext_resource type="Resource" uid="uid://b4ic6s2q43k6l" path="res://resources/organisms/organism_c.tres" id="4_7qpkv"]
+[ext_resource type="Resource" uid="uid://dlv4r7pg1emp0" path="res://resources/basic_resources/basic_resource_dna.tres" id="5_7cgdk"]
+[ext_resource type="Resource" uid="uid://da7nj1rn38dso" path="res://resources/species/species_abc.tres" id="6_5gp7g"]
+[ext_resource type="Script" path="res://resources/recipes/recipe.gd" id="7_3vxuk"]
+
+[sub_resource type="Resource" id="Resource_564hy"]
+script = ExtResource("1_rdyhx")
+resource = ExtResource("2_sd3yn")
+quantity = -1
+
+[sub_resource type="Resource" id="Resource_uodis"]
+script = ExtResource("1_rdyhx")
+resource = ExtResource("3_uq0ss")
+quantity = -1
+
+[sub_resource type="Resource" id="Resource_6au0r"]
+script = ExtResource("1_rdyhx")
+resource = ExtResource("4_7qpkv")
+quantity = -1
+
+[sub_resource type="Resource" id="Resource_pe4ls"]
+script = ExtResource("1_rdyhx")
+resource = ExtResource("5_7cgdk")
+quantity = -3
+
+[sub_resource type="Resource" id="Resource_c5twe"]
+script = ExtResource("1_rdyhx")
+resource = ExtResource("6_5gp7g")
+quantity = 1
+
+[resource]
+script = ExtResource("7_3vxuk")
+name = "Species ABC"
+ingredients = Array[ExtResource("1_rdyhx")]([SubResource("Resource_564hy"), SubResource("Resource_uodis"), SubResource("Resource_6au0r"), SubResource("Resource_pe4ls")])
+results = Array[ExtResource("1_rdyhx")]([SubResource("Resource_c5twe")])
+run_mode = "run_mode_manual"
+id = "produce_species_abc"

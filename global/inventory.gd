@@ -4,8 +4,9 @@ extends Node
 const MAX_HEALTH := 600
 
 var basic_resources: Dictionary = {}
-var organisms: Dictionary = {}
 var modules: Dictionary = {}
+var organisms: Dictionary = {}
+var species: Dictionary = {}
 
 
 func get_resource_quantity(resource: GameResourceData) -> int:
@@ -13,10 +14,12 @@ func get_resource_quantity(resource: GameResourceData) -> int:
 	var resource_dict = null
 	if resource is BasicResourceData:
 		resource_dict = basic_resources
-	elif resource is OrganismData:
-		resource_dict = organisms
 	elif resource is ModuleData:
 		resource_dict = modules
+	elif resource is OrganismData:
+		resource_dict = organisms
+	elif resource is SpeciesData:
+		resource_dict = species
 	else:
 		print("Resource type not found: ", resource.id)
 		return 0
@@ -36,10 +39,12 @@ func update_game_resource(resource: GameResourceData, quantity: int, simulate :=
 	var resource_dict = null
 	if resource is BasicResourceData:
 		resource_dict = basic_resources
-	elif resource is OrganismData:
-		resource_dict = organisms
 	elif resource is ModuleData:
 		resource_dict = modules
+	elif resource is OrganismData:
+		resource_dict = organisms
+	elif resource is SpeciesData:
+		resource_dict = species
 	else:
 		print("Resource type not found: ", resource.id)
 		return false

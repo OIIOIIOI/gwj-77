@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxeonessghck0"]
+
+[ext_resource type="Script" path="res://scenes/modules/dna_splicer/dna_splicer.gd" id="1_424w2"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qlbgp"]
+size = Vector2(360, 500)
+
+[node name="DNASplicer" type="Node2D"]
+script = ExtResource("1_424w2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-445, -125)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("PlaceholderTexture2D_qlbgp")
+
+[node name="CoreMarker" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-445, 32)

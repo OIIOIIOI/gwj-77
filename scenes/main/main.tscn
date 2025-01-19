@@ -81,19 +81,20 @@ anchor_bottom = 1.0
 offset_top = -478.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/margin_left = 32
+theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 32
+theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 32
 
 [node name="ScrollContainer" type="ScrollContainer" parent="UI/MarginContainer2"]
-custom_minimum_size = Vector2(1856, 410)
+custom_minimum_size = Vector2(1920, 410)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 vertical_scroll_mode = 0
 
-[node name="CardsContainer" parent="UI/MarginContainer2/ScrollContainer" instance=ExtResource("8_3ex6m")]
+[node name="CardsContainer" parent="UI/MarginContainer2/ScrollContainer" node_paths=PackedStringArray("scroll_parent") instance=ExtResource("8_3ex6m")]
 layout_mode = 2
+scroll_parent = NodePath("..")
 
 [node name="Debug" parent="." instance=ExtResource("2_63hjy")]

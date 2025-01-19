@@ -11,17 +11,17 @@
 [sub_resource type="Resource" id="Resource_qs3av"]
 script = ExtResource("1_opmb4")
 resource = ExtResource("2_5kpny")
-quantity = -400
+quantity = -300
 
 [sub_resource type="Resource" id="Resource_e717i"]
 script = ExtResource("1_opmb4")
 resource = ExtResource("3_pbh7h")
-quantity = -400
+quantity = -300
 
 [sub_resource type="Resource" id="Resource_boy7g"]
 script = ExtResource("1_opmb4")
 resource = ExtResource("4_psyed")
-quantity = -400
+quantity = -300
 
 [sub_resource type="Resource" id="Resource_sja6s"]
 script = ExtResource("1_opmb4")
